@@ -1,0 +1,9 @@
+.form-input {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-input label {
+    margin-bottom: 4px;
+}

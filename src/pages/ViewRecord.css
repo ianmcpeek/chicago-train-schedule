@@ -1,0 +1,29 @@
+.view-record {
+    margin: auto;
+    max-width: 900px;
+    background-color: white;
+    border-left: 2px dashed black;
+    border-right: 2px dashed black;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.view-record--content {
+    padding: 20px 40px;
+}
+
+.create-button {
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: linear-gradient(red, darkred);
+    border: 0;
+    border-radius: 4px;
+    padding: 10px 20px;
+}
+
+.row {
+    display: flex;
+    margin-bottom: 10px;
+}

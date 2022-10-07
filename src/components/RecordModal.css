@@ -1,0 +1,63 @@
+.dimmer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #00000088;
+    transition: opacity 0.8s ease-in;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+}
+
+.modal {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__content {
+    background-color: white;
+    border: 2px solid darkgrey;
+    padding: 40px;
+    border-radius: 12px;
+}
+
+.modal .modal__content form button {
+    margin-top: 10px;
+}
+
+.row.close {
+    position: relative;
+    margin: 0;
+    height: 0;
+    justify-content: flex-end;
+}
+
+.close-button {
+    text-transform: uppercase;
+    border: 0;
+    font-weight: 600;
+    transition: background-color 0.3s ease-in;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+}
+.close-button:hover {
+    background-color: lightgrey;
+}
+
+.modal__content h2 {
+    margin-bottom: 40px !important;
+    margin-top: 0px !important;
+}
+
+
+.modal__content form {
+    display: flex;
+    column-gap: 10px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}

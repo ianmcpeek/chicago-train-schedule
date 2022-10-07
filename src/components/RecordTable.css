@@ -1,0 +1,70 @@
+.record-table {
+    width: 100%;
+    border: 1px solid lightgrey;
+    border-collapse: collapse;
+}
+
+.record-table tr:not(:last-child) td {
+    border-bottom: 1px solid lightgray;
+}
+
+.record-table td:not(:last-child) {
+    border-right: 1px solid lightgray;
+}
+
+.record-table tbody td {
+    padding: 10px 0;
+}
+
+.record-table tr th {
+    border-bottom: 1px solid lightgrey;
+    padding: 5px 0;
+    user-select: none;
+}
+.record-table tr th.sortable {
+    cursor: pointer;
+}
+.record-table tr th.sortable:active {
+    background: linear-gradient(white, darkgrey);
+}
+
+thead {
+    background: linear-gradient(white, lightgrey);
+    height: 40px;
+}
+
+tfoot {
+    background: linear-gradient(white, lightgrey);
+    height: 40px;
+    border-top: 1px solid lightgrey;
+    
+}
+
+.edit-button {
+    font-size: 22px;
+    height: 40px;
+    width: 40px;
+}
+.delete-button {
+    height: 40px;
+    width: 40px;
+    font-size: 22px;
+}
+
+.record-table__footer {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 10px;
+    column-gap: 5px;
+}
+
+.zero-state {
+    background: linear-gradient(white, lightgrey);
+    height: 200px;
+}
+
+.sort-emoji {
+    display: inline-block;
+    width: 15px;
+    height: 18px;
+}

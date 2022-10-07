@@ -1,24 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ViewRecord from './pages/ViewRecord';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{ 
+      backgroundImage: `url(${process.env.PUBLIC_URL + '/jeremiah-higgins-lzBHm2sbJPM-unsplash.jpg'})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover'
+    }}>
+      <ViewRecord></ViewRecord>
     </div>
   );
 }
