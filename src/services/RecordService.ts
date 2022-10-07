@@ -3,8 +3,8 @@ import CacheClient from "./CacheClient";
 import { v4 as uuidv4 } from 'uuid';
 
 /**
- * Service for interacting with records stored in the browser's localStorage
- * Main strategy is to fetch all records from storage when performing changes.
+ * Service for interacting with records stored in the cache.
+ * Main strategy is to fetch all records from cache when performing changes.
  * On a larger scale we could add chunking if the number of records in one key-value pair becomes unwieldy.
  */
 class RecordService {
@@ -45,6 +45,7 @@ class RecordService {
         const records = this.getAll();
         return pageIndex * pageSize < records.length;
     }
+    
     getRecordCount() {
         const records = this.getAll();
         return records.length;
@@ -82,9 +83,7 @@ class RecordService {
 
     private sortRecords(records: any[], field: string, descending: boolean): any[] {
         const sortedRecords = [...records];
-        // for our purposes all fields are strings
-        // out of convenience this general purpose function can be used for all sort field
-        // in realworld we would need to handle numerous differe sort strategies
+        // Since all fields in this version are strings, there is no need to distinguish sort strategies
         sortedRecords.sort((a, b) =>  descending ? b[field].localeCompare(a[field]) : a[field].localeCompare(b[field]));
         return sortedRecords;
     }

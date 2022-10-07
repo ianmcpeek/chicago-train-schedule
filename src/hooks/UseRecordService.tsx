@@ -9,45 +9,29 @@ import RecordService from "../services/RecordService";
 const PAGE_SIZE = 5;
 
 /**
- * Hook for Record Controller functionality
- * Handles Creation of Records
- * @returns 
+ * Provides one place to handle paginated, sorted record data
+ * 
+ * @returns {
+ *       records,
+ *       paginatedLabel,
+ *       sortColumn,
+ *       sortDescending,
+ *       createRecord,
+ *       updateRecord,
+ *       deleteRecord,
+ *       prevPage,
+ *       nextPage,
+ *       setSortColumn,
+ *       setSortDescending
+ * }
  */
 function useRecordService() {
-    // we are going to assume that we are no longer holding the entire set of date,
-    // but instead only only to fill pages for component to save network bandwidth
-    // because of this, we are going to update our copy of records whenever recordsChanged is triggered
-    // we will rely on service for 
-    // * creation of record
-    // * editing of record
-    // * deleting of record
-    // * next page
-    // * prev page
-    // * sortColumn changed
-    // * sortOrder changed
-    // whenever any of these operations occur, it is possible that the elements in our page have shifted
-    // because of this, we want a fresh copy of records when any of these occur
     const [records, setRecords] = useState<Record[]>([]);
     const [pageIndex, setPageIndex] = useState(0);
     const [paginatedLabel, setPaginatedLabel] = useState('');
     const [sortColumn, setSortColumn] = useState('routeNumber');
     const [sortDescending, setSortDescending] = useState(true);
     const [recordsChanged, setRecordsChanged] = useState(0);
-    
-    // on load, hydrate records from cache
-
-
-    // useEffect(() => {
-    //     setRecords([
-    //         new Record('El', 'Brown Line', 'E102', 'SJones'),
-    //         new Record('Metra', 'UPN', 'M405', 'AJohnson'),
-    //         new Record('Metra', 'UPN', 'M511', 'YSmith'),
-    //         new Record('Amtrak', 'Hiawatha', 'A006', 'LBeck'),
-    //         new Record('El', 'Red Line', 'E432', 'LHill'),
-    //         new Record('Amtrak', 'Hiawatha', 'A005', 'LBeck'),
-    //     ]);
-    // }, []);
-
 
     const createRecord = useCallback((form: RecordForm) => {
         const cacheClient = new CacheClient();
@@ -88,7 +72,6 @@ function useRecordService() {
         const cacheClient = new CacheClient();
         const recordService = new RecordService(cacheClient);
         
-        // setRecords(recordService.getAll());
         setRecords(recordService.getPaginated(pageIndex, PAGE_SIZE, sortColumn, sortDescending));
     }, [pageIndex, sortColumn, sortDescending, recordsChanged]);
 

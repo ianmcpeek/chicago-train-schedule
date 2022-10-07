@@ -45,23 +45,23 @@ function RecordModal({ open, editRecord, fnOnCreate, fnOnClose }: RecordModalPro
         setForm(updatedForm);        
     }, [form]);
 
-    function onRouteChanged(route: string) {
+    const onRouteChanged = useCallback((route: string) => {
         const updatedForm = { ...form };
         updatedForm.route = route;
-        setForm(updatedForm);        
-    }
+        setForm(updatedForm); 
+    }, [form]);
 
-    function onRouteNumberChanged(routeNumber: string) {
+    const onRouteNumberChanged = useCallback((routeNumber: string) => {
         const updatedForm = { ...form };
         updatedForm.routeNumber = routeNumber;
-        setForm(updatedForm);        
-    }
+        setForm(updatedForm); 
+    }, [form]);
 
-    function onOperatorIdChanged(operatorId: string) {
+    const onOperatorIdChanged = useCallback((operatorId: string) => {
         const updatedForm = { ...form };
         updatedForm.operatorId = operatorId;
-        setForm(updatedForm);        
-    }
+        setForm(updatedForm);     
+    }, [form]);
 
     function onSubmit(e: any) {
         fnOnCreate(form);

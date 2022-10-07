@@ -21,7 +21,6 @@ function SortEmoji({ selected, descending }: { selected: boolean, descending: bo
     </span>;
 }
 
-// include zero state for application on first load
 function RecordTable({ records, paginatedLabel, sortColumn, sortDescending, fnOnEdit, fnOnDelete, fnOnSort, fnOnPrevPage, fnOnNextPage }: RecordTableProps) {
 
     function onSort(field: string) {

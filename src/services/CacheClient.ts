@@ -1,6 +1,7 @@
+/**
+ * Wrapper Client for localStorage to be optionally used within services
+ */
 class CacheClient {
-    // cache key/value,
-
     public get(key: string): any {
         const item = localStorage.getItem(key);
         return item !== null ? JSON.parse(item): null;

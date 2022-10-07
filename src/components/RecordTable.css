@@ -40,15 +40,10 @@ tfoot {
     
 }
 
-.edit-button {
+.edit-button, .delete-button {
     font-size: 22px;
     height: 40px;
     width: 40px;
-}
-.delete-button {
-    height: 40px;
-    width: 40px;
-    font-size: 22px;
 }
 
 .record-table__footer {

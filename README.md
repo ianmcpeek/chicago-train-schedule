@@ -1,12 +1,23 @@
-# Getting Started with Create React App
+# Chicago Train Schedule
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A small demo app to demonstrate browser persistance using an html table. Implementation uses localStorage and the `uuid` package to persist records across browser sessions. UUID is used to prevent id collisions as this value is used as a key prop for table rows.
+
+The table can be sorted by column in descending or ascending order with paginated results up to 5 items.
+
+To get started there are 2 options:
+* Navigating to the hosted example running on AWS S3 as a static website. Click on the link to give it a try: http://wellspring-chicago-train-schedules.s3-website-us-west-2.amazonaws.com/
+
+* To build the app yourself you will need a [current version of Node](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) and run `npm install` in the project directory. Continue reading to run the app locally.
+
+Photo available under the Unsplash License, courtesy of [Jeremiah Higgins](https://unsplash.com/photos/lzBHm2sbJPM)
+
 
 ## Available Scripts
 
 In the project directory, you can run:
 
 ### `npm start`
+### `npm run build`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
